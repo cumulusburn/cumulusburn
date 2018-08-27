@@ -1,0 +1,79 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Prescribed Burn Calculator</title>
+    </head>
+    <body style=" font-family:sans-serif; color: lime">
+        <h1>Smoke Management Form</h1>
+        <form id="burnCalc">
+            <!-- Burn Size -->
+            <label for="sizeInput">Burn Size: </label>
+            <input id="sizeInput" name="sizeInput" type="number" step="0.01" min="0" required>&nbsp; Acres<br><br>
+
+            <!-- Category Day -->
+            <label for="categoryInput">Category Day: </label>
+            <select name="categoryInput" id="categoryInput" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br><br>
+
+            <!-- Target Distance -->
+            <label for="targetInput">Target Distance: </label>
+            <input id="targetInput" name="targetInput" type="number" step="0.01" min="0" required>&nbsp;Miles<br><br>
+
+            <!-- Fuel Type -->
+            <label for="fuelInput">Fuel Type: </label>
+            <select name="fuelInput" id="fuelInput" required>
+                <option value="Shortleaf Pine with Oak">Shortleaf Pine with Oak</option>
+                <option value="Shortleaf Pine Regeneration">Shortleaf Pine Regeneration</option>
+                <option value="Loblolly Pine with Oak">Loblolly Pine with Oak</option>
+                <option value="Loblolly Pine Regeneration">Loblolly Pine Regeneration</option>
+                <option value="Hardwood Leaf Litter">Hardwood Leaf Litter</option>
+                <option value="Grass or Brush">Grass or Brush</option>
+                <option value="Dispersed Slash">Dispersed Slash</option>
+                <option value="Piled Debris">Piled Debris</option>
+                <option value="Shortleaf Loblolly with Grass">Shortleaf Loblolly with Grass</option>
+                <option value="Corn">Corn</option>
+                <option value="Cotton">Cotton</option>
+                <option value="Rice">Rice</option>
+                <option value="Soybean">Soybean</option>
+                <option value="Wheat">Wheat</option>
+            </select>
+            <br><br>
+
+            <!-- Fuel Type -->
+            <label for="loadInput">Load: </label>
+            <select name="loadInput" id="loadInput" required>
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Heavy">Heavy</option>
+            </select>
+            <br><br>
+
+
+            <input type="submit" value="Calculate"> 
+            <button id="clear">Clear</button>
+        </form>
+
+        <div>
+            Available Tons: <span id="availableTons"></span>
+        </div>
+        <br>
+        <div>
+            Total Tons: <span id="totalTons"></span>
+        </div>
+        <br>
+        <div>
+            <span id="resultOutput"></span>
+        </div>
+
+        <script src="tons_per_acre_table.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
